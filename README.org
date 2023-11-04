@@ -1,0 +1,22 @@
+https://linuxcommandlibrary.com/man/jp2a
+
+
+jp2a Meisje_met_de_parel.jpg --chars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"  --size=1000x1000 > Meisje_met_de_parel.txt
+jp2a meisje.jpg  --size=1000x1000 > meisje.txt
+
+** git
+…or create a new repository on the command line
+
+echo "# muro" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coliflor/muro.git
+git push -u origin main
+
+…or push an existing repository from the command line
+
+git remote add origin git@github.com:coliflor/muro.git
+git branch -M main
+git push -u origin main
