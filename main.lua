@@ -2,7 +2,7 @@ local d = require "lib.helper"
 local m = require "lib.muro"
 local argparse = require "lib.argparse"
 local parser   = argparse()
-   :name "wallpaperinos"
+   :name "muro"
    :description [[
   No description
 ]]
