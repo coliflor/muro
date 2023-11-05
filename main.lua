@@ -4,7 +4,7 @@ local argparse = require "lib.argparse"
 local parser   = argparse()
    :name "muro"
    :description [[
-  No description
+
 ]]
    :epilog "  Author: beemo.ceniza@gmail.com"
 
