@@ -13,7 +13,6 @@ parser:flag("-v --version", version)
 parser:flag("--mirrorh",  "mirror image horizontally")
 parser:flag("--mirrorv", "mirror image vertically")
 parser:flag("--duplicatelines", "duplicates lines of the image")
-parser:flag("-c --compress", "compress the image with libdeflate")
 parser:option("-w --width", "width of the image ", 3840)
 parser:option("-e --height", "height of the image ", 2160)
 parser:option("-s --scale", "scale of the charactertable", 1)
@@ -67,4 +66,4 @@ end
 local outputBMPFilename = args.filename
 
 -- Save the BMP image
-m.saveBMP(outputBMPFilename, userWidth, userHeight, scaling, args.mirrorh, args.mirrorv, characterTable, colorLookup, args.compress)
+m.saveBMP(outputBMPFilename, userWidth, userHeight, scaling, args.mirrorh, args.mirrorv, characterTable, colorLookup)
