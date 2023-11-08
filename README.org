@@ -1,12 +1,36 @@
+* Muro
+
+  _Muro_ is a tool to create repeating pattern wallpapers based upon a txt file that contains the pattern in plain ASCII
+
+	#+CAPTION: sample image based on this program
+	#+NAME:   fig:Muro
+	[[./muro.png]]
+
+	To use this program simply download the repository and run:
+  #+begin_src
+		lua main.lua
+	#+end_src
+
+	To see information about the possible commands use:
+  #+begin_src
+		lua main.lua -h
+	#+end_src
+
+** personal notes
+
+- manual del jp2a
 https://linuxcommandlibrary.com/man/jp2a
 
-
+- to recreate meisje.txt
+#+begin_src bash
 jp2a Meisje_met_de_parel.jpg --chars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"  --size=1000x1000 > Meisje_met_de_parel.txt
 jp2a meisje.jpg  --size=1000x1000 > meisje.txt
+#+end_src
 
-** git
+** git tutorial
 …or create a new repository on the command line
 
+#+begin_src sh
 echo "# muro" >> README.md
 git init
 git add README.md
@@ -14,9 +38,13 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:coliflor/muro.git
 git push -u origin main
+#+end_src
+
 
 …or push an existing repository from the command line
 
+#+begin_src sh
 git remote add origin git@github.com:coliflor/muro.git
 git branch -M main
 git push -u origin main
+#+end_src
