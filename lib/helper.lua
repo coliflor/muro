@@ -46,4 +46,28 @@ function helper.a(r, g, b)
 	 return string.char(b, g, r)
 end
 
+-- Function to check if a string is a path
+function helper.isPath(str)
+    return string.match(str, "[/\\]") ~= nil
+end
+
+-- Function to get the last folder name from a path
+function helper.getLastFolderName(path)
+    local pattern = "[^/]+$"
+    return string.match(path, pattern)
+end
+
+-- Function to extract the path excluding the last element
+function helper.getPathWithoutLastElement(path)
+    local pattern = "(.*/)[^/]+$"
+    return string.match(path, pattern) or ""
+end
+
+-- Return true if file exists and is readable.
+function helper.file_exists(path)
+	 local f = io.open(path, "rb")
+	 if f then f:close() end
+	 return f ~= nil
+end
+
 return helper

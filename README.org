@@ -7,13 +7,13 @@
 	[[./muro.png]]
 
 	To use this program simply download the repository and run:
-  #+begin_src
-		lua main.lua
+  #+begin_src sh
+	lua main.lua
 	#+end_src
 
 	To see information about the possible commands use:
-  #+begin_src
-		lua main.lua -h
+  #+begin_src sh
+	lua main.lua -h
 	#+end_src
 
 ** personal notes

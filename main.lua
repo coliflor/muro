@@ -48,12 +48,36 @@ else
 	 scaling = 1
 end
 
--- Replace with the path to your ASCII text file
-local filename = "images/" .. args.ascii .. "/" .. args.ascii .. ".txt"
+local filename, status, colorLookup
+if d.isPath(args.ascii) then
+	 local ascii = d.getLastFolderName(args.ascii)
+	 local path = d.getPathWithoutLastElement(args.ascii)
+	 print(ascii)
+	 print(path)
+	 if not d.file_exists(path .. ascii .. "/" .. ascii .. ".txt") then
+			print("file " .. ascii .. " doesn't exists")
+			os.exit(0)
+	 end
 
-local status, colorLookup = pcall(require, "images.".. args.ascii .. "." .. args.ascii)
-if not status then
-	colorLookup = m.characterTable
+	 filename =  path .. ascii .. "/" .. ascii .. ".txt"
+
+	 package.path = args.ascii .. '/?.lua;' .. package.path
+	 status, colorLookup = pcall(require, ascii)
+	 if not status then
+			colorLookup = m.characterTable
+	 end
+else
+	 if not d.file_exists("images/" .. args.ascii .. "/" .. args.ascii .. ".txt") then
+			print("file " .. args.ascii .. " doesn't exists")
+			os.exit(0)
+	 end
+
+	 filename = "images/" .. args.ascii .. "/" .. args.ascii .. ".txt"
+
+	 status, colorLookup = pcall(require, "images.".. args.ascii .. "." .. args.ascii)
+	 if not status then
+			colorLookup = m.characterTable
+	 end
 end
 
 local characterTable = m.readAsciiFileIntoTable(filename)
